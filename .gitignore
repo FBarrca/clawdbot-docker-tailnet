@@ -1,0 +1,2 @@
+# Local env (secrets); copy from docker/.env.example
+docker/.env
