@@ -20,7 +20,10 @@ services:
       - sys_module
     restart: unless-stopped
   moltbot-gateway:
-    image: ${CLAWDBOT_IMAGE:-moltbot:local}
+    image: ../moltbot/Dockerfile
+    build:
+      context: ../moltbot
+      dockerfile: Dockerfile
     environment:
       HOME: /home/node
       TERM: xterm-256color
