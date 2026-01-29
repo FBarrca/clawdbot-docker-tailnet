@@ -20,7 +20,7 @@ services:
       - sys_module
     restart: unless-stopped
   moltbot-gateway:
-    image: ../moltbot/Dockerfile
+    image: moltbot:local
     build:
       context: ../moltbot
       dockerfile: Dockerfile
@@ -51,9 +51,10 @@ services:
       ]
 
   moltbot-cli:
-    extends:
-      file: ../moltbot/docker-compose.yml
-      service: moltbot-cli
+    image: moltbot:local
+    build:
+      context: ../moltbot
+      dockerfile: Dockerfile
     networks:
       - clawdbot
 
