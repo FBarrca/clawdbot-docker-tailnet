@@ -1,0 +1,3 @@
+[submodule "moltbot"]
+	path = moltbot
+	url = https://github.com/moltbot/moltbot.git
