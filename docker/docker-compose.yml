@@ -33,8 +33,9 @@ services:
       CLAUDE_WEB_COOKIE: ${CLAUDE_WEB_COOKIE}
     volumes:
       - ${CLAWDBOT_CONFIG_DIR}:/home/node/.clawdbot:rw
-      - ${CLAWDBOT_CONFIG_DIR}:/home/node/.moltdbot:rw
+      - ${CLAWDBOT_CONFIG_DIR}:/home/node/.moltbot:rw
       - ${CLAWDBOT_WORKSPACE_DIR}:/home/node/clawd
+    user: "${CLAWDBOT_UID:-1000}:${CLAWDBOT_GID:-1000}"
     network_mode: service:ts-clawdbot
     depends_on:
       - ts-clawdbot
